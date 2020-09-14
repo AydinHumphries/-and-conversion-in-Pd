@@ -1,0 +1,51 @@
+#N canvas -8 -8 1366 685 12;
+#N canvas -8 -8 1366 685 interface 1;
+#X obj 1380 0 Multi-Oscillator 3;
+#X obj 0 0 Multi-Oscillator 1;
+#X restore 20 50 pd interface;
+#X obj 196 222 f;
+#X obj 196 246 + 1;
+#X obj 114 172 t b b;
+#X obj 114 148 bng 15 250 50 0 empty empty create_Multi-Osc_pattern_generator
+17 7 0 10 -262144 -1 -1;
+#X obj 114 284 pack f f;
+#X msg 114 335 \; pd-interface obj \$1 0 Multi-Oscillator \$2 \;;
+#X obj 114 221 -690;
+#X obj 114 245 + 690;
+#X obj 364 145 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
+-1 -1;
+#X msg 228 222 0;
+#X msg 153 222 -690;
+#X obj 364 165 t b b b;
+#X msg 410 211 \; pd-interface clear;
+#X obj 724 194 print \$0-interface;
+#X msg 724 165 message;
+#X msg 729 241 message;
+#X obj 729 265 s message;
+#X text 117 382 the message above generates [Multi-Oscillator 1] \,
+[Multi-Oscillator 2] \, etc. inside [pd interface] (top left corner).
+the abstraction is contained within a graph which allows me to manipulate
+the parameters through the GUI features of an interface. dynamic patching
+can be problematic though as it doesn't always consistently work and
+I am trying to find alternatives to it but right now it's the only
+way I can think of to create multiple instances of an abstraction at
+the push of a button (the bang "create Multi-Osc pattern generator")
+;
+#X connect 1 0 2 0;
+#X connect 2 0 1 1;
+#X connect 2 0 5 1;
+#X connect 3 0 7 0;
+#X connect 3 1 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 8 0 7 1;
+#X connect 9 0 12 0;
+#X connect 10 0 1 1;
+#X connect 11 0 7 1;
+#X connect 12 0 11 0;
+#X connect 12 1 10 0;
+#X connect 12 2 13 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
