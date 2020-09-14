@@ -12,6 +12,6 @@ I have identified three potential issues with my patch - the context of the full
 
 3. the final issue is that I created some tables in an abstraction turned graph that contain $1 arguments in order to make it possible for me to create different graphs on creating multiple instances of an abstraction through dynamic patching (see in video: 0m10s to 0m45s. the problem is the main patch doesn't accept those arguments for some reason but spits back "$1 arguments out of range" error messages (you can see this more clearly in the video @10m25s through to 13m55s). 
 
-full code: can be downloaded from AydinHumphries/-and-conversion-in-Pd (github.com)
+full code: can be downloaded from https://github.com/AydinHumphries/-and-conversion-in-Pd
 
 video: https://youtu.be/0KUmxHc_mqg"
